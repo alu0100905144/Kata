@@ -27,6 +27,7 @@ public class TrollTrollerTest {
     public void transformedMessageHasNoVowelsOrMultipleSpaces(){
         Assert.assertEquals("HT Y", trollTroller.removeVowels("I HATE YOU"));
         Assert.assertEquals("HY HT Y", trollTroller.removeVowels("HEY I HATE YOU"));
+        Assert.assertEquals("Ths wbst s fr lsrs LL!", trollTroller.removeVowels("This website is for losers LOL!"));
     }
 
 }
