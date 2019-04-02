@@ -1,7 +1,5 @@
 package com.tdd;
 
-import java.util.regex.Pattern;
-
 public class TrollTroller {
 
     public String removeVowels(String comment){
