@@ -21,4 +21,10 @@ public class TrollTrollerTest {
         TrollTroller trollTroller = new TrollTroller();
         Assert.assertEquals("HT Y", trollTroller.removeVowels("I HATE YOU"));
     }
+
+    @Test
+    public void returnsMessageWithoutVowelsWhenStandardMessageIsReceived2(){
+        TrollTroller trollTroller = new TrollTroller();
+        Assert.assertEquals("HY HT Y", trollTroller.removeVowels("HEY I HATE YOU"));
+    }
 }
