@@ -1,7 +1,8 @@
 package com.tdd;
 
 public class TrollTroller {
+
     public String removeVowels(String comment){
-        return "";
+        return comment.replaceAll("[aAeEiIoOuU]", "");
     }
 }
