@@ -5,13 +5,12 @@ import java.util.regex.Pattern;
 public class TrollTroller {
 
     public String removeVowels(String comment){
+        Pattern vowels = Pattern.compile("[aeiou]", Pattern.CASE_INSENSITIVE);
+        Pattern spaces = Pattern.compile("\\s+");
 
-        Pattern p = Pattern.compile("[aeiou]", Pattern.CASE_INSENSITIVE);
-        Pattern q = Pattern.compile("\\s+");
+        comment = vowels.matcher(comment).replaceAll("");
+        comment = spaces.matcher(comment).replaceAll(" ");
 
-        String noVowels = p.matcher(comment).replaceAll("");
-        String noDoubleSpaces = q.matcher(noVowels).replaceAll(" ");
-
-        return noDoubleSpaces.trim();
+        return comment.trim();
     }
 }
