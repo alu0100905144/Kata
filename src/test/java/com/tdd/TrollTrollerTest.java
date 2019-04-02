@@ -1,30 +1,32 @@
 package com.tdd;
 import org.junit.Assert;
+import org.junit.Before;
 import org.junit.Test;
 
 public class TrollTrollerTest {
 
-    @Test
-    public void returnOriginalMessageIfEmptyMessageIsReceived(){
-        TrollTroller trollTroller = new TrollTroller();
-        Assert.assertEquals("", trollTroller.removeVowels(""));
+    private TrollTroller trollTroller;
+
+    @Before
+    public void initialize(){
+        trollTroller = new TrollTroller();
     }
 
     @Test
-    public void returnsOriginalMessageIfAnOnlyConsonantsMessageIsReceived(){
-        TrollTroller trollTroller = new TrollTroller();
+    public void messageIsNotModifiedIfNoVowelsAreFound(){
+        Assert.assertEquals("", trollTroller.removeVowels(""));
         Assert.assertEquals("FK", trollTroller.removeVowels("FK"));
     }
 
     @Test
-    public void returnsMessageWithoutVowelsWhenStandardMessageIsReceived(){
-        TrollTroller trollTroller = new TrollTroller();
-        Assert.assertEquals("HT Y", trollTroller.removeVowels("I HATE YOU"));
+    public void vowelsAreRemovedFromMessage(){
+        Assert.assertEquals("HT", trollTroller.removeVowels("HATE"));
     }
 
     @Test
-    public void returnsMessageWithoutVowelsWhenStandardMessageIsReceived2(){
-        TrollTroller trollTroller = new TrollTroller();
+    public void transformedMessageHasNoVowelsOrMultipleSpaces(){
+        Assert.assertEquals("HT Y", trollTroller.removeVowels("I HATE YOU"));
         Assert.assertEquals("HY HT Y", trollTroller.removeVowels("HEY I HATE YOU"));
     }
+
 }
