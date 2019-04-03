@@ -19,7 +19,6 @@ public class SmileyCheckerTest {
                 counter++;
             }
         }
-
         return counter;
     }
 
@@ -35,7 +34,7 @@ public class SmileyCheckerTest {
     }
 
     @Test
-    public void HappyFaceIsASmiley(){
+    public void happyFaceIsASmiley(){
         Assert.assertTrue(smileyChecker.isASmiley(":)"));
         Assert.assertTrue(smileyChecker.isASmiley(":D"));
     }
@@ -52,7 +51,7 @@ public class SmileyCheckerTest {
     }
 
     @Test
-    public void smileysAreDetected(){
+    public void smileysAreCounted(){
         String[] smileys =  {":)", ";(", ";}", ":-D"};
         Assert.assertEquals(2, countSmileys(smileys));
 
