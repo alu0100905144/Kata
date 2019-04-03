@@ -7,7 +7,7 @@ public class SmileyCheckerTest {
 
     private SmileyChecker smileyChecker;
 
-    @Before
+    @BeforeClass
     public void initializer(){
         smileyChecker = new SmileyChecker();
     }
